@@ -1,0 +1,22 @@
+:root {
+    --dark-bg-color: #180028;
+    --dark-text-color: white;
+    --dark-secondary-color: #;
+    --light-bg-color: #;
+    --light-text-color: #;
+    --light-secondary-color: #;
+}
+
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+
+.navbar {
+    border-radius: 1rem;
+}
