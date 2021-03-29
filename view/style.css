@@ -46,6 +46,11 @@ body {
     font-family: "Courgette", sans-serif;
 }
 
+.introicon {
+    padding-bottom: 0.5vh;
+    border-radius: 0.6rem;
+}
+
 .introduction {
     margin: 10vh 5vh;
     border: 0.1rem var(--offset-color) solid;
