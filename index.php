@@ -21,11 +21,6 @@
             <div class="heading navigation col-2"><a href="#">Spell Power Calculator</a></div>
             <div class="col-1"></div>
             <div class="heading col-2">Hey there stranger</div>
-            <script>
-                const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-                const height = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
-                console.log(width, height);
-            </script>
         </div>
     </div>
 </body>
