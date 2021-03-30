@@ -17,8 +17,8 @@
 
 body {
     margin: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 98vw;
+    height: 98vh;
     background-color: var(--dark-bg-primary-color);
     color: var(--dark-text-primary-color);
 }
@@ -50,7 +50,7 @@ body {
 }
 
 .introduction {
-    margin: 10vh 5vw;
+    margin: 10vh 2vw;
     border: 0.1rem var(--offset-color) solid;
     border-radius: 0.5rem;
     background-color: var(--dark-bg-secondary-color);
@@ -69,7 +69,7 @@ h3 {
 }
 
 hr {
-    background-color: var(--offset-color);
+    background-color: var(--dark-bg-tertiary-color);
 }
 
 .heading {
