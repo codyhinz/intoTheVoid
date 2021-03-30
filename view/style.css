@@ -85,6 +85,11 @@ hr {
     color: var(--dark-text-primary-color);
 }
 
+footer {
+    margin: 28vh 0 0 0;
+    border-top: 2px var(--dark-bg-tertiary-color) solid;
+}
+
 @media screen and (max-width: 1006px) {
     :root {
       font-size: 12px;
