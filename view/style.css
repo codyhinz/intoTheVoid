@@ -5,14 +5,13 @@
     --dark-text-primary-color: #C3C1CF;
     --dark-text-active-color: #fff;
     --offset-color: #04104C;
-    --active-text-color-dark: #000;
-    --active-bg-color-dark: #fff;
     --light-bg-primary-color: ;
     --light-bg-secondary-color: ;
     --light-bg-tertiary-color: ;
     --light-text-primary-color: ;
     --light-text-active-color: ;
     font-size: 14px;
+    font-family: "Arial", sans-serif;
 }
 
 
@@ -43,7 +42,6 @@ body {
     border-bottom: 1px var(--dark-bg-tertiary-color) solid;
     -webkit-box-shadow: 0px 4px 8px 5px rgba(0,0,0,0.31); 
     box-shadow: 0px 4px 8px 5px rgba(0,0,0,0.31);
-    font-family: "Courgette", sans-serif;
 }
 
 .introicon {
@@ -52,7 +50,7 @@ body {
 }
 
 .introduction {
-    margin: 10vh 5vh;
+    margin: 10vh 5vw;
     border: 0.1rem var(--offset-color) solid;
     border-radius: 0.5rem;
     background-color: var(--dark-bg-secondary-color);
@@ -62,7 +60,7 @@ body {
 }
 
 p {
-    font-family: "Arial", sans-serif;
+    
     color: var(--dark-text-primary-color);
 }
 
