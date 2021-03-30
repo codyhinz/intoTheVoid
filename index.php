@@ -12,7 +12,7 @@
         <h2>Who are you?</h3><hr/>
         <div class="row">
             <div class="col-9">
-                <p>Fair enough, I am a long time private server enjoyer with many Sunwell Plateau clears on various servers(most of which as a shadow priest). I don't claim to be the best at anything, but I have done this progression about a dozen times. My only trackable achievements are my parses in classic. I have a rank 1 parse as a fury warrior on classic, and I hope to be the rank 1 Alliance shadow priest in Classic TBC.</p>
+                <p>Fair enough, I am a long time private server enjoyer with tons of experience on various servers(most of which as a shadow priest). I don't claim to be the best at anything, but I have done this progression about a dozen times. My only trackable achievements are my parses in classic. I have a rank 1 parse as a fury warrior on classic, and I hope to be the rank 1 Alliance shadow priest in Classic TBC.</p>
             </div>
             <div class="col-2">
                 <img src="./view/rank1.jpg" width="120" height="110" alt="Rank 1 Parse" class="parseicon">
