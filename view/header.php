@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./model/functions.js"></script>
-    <?php 
+    <?php
         switch($page) {
             case 'home':
                 echo "<title>Into the Void</title>";
@@ -69,5 +69,11 @@
                 })();
             </script>
             </div>
+        </div>
+    </div>
+    <div class="container col-11 mobilenav">
+        <div class="row">
+            <h1 class="col-8">Into the Void</h1>
+            <div class="col-2 align-items-end"><button class="btn" onclick="nav()"><img src="./view/hamburger.png" width="21" height="23" class="hamburgericon"></button></div>
         </div>
     </div>

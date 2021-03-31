@@ -71,6 +71,10 @@ p {
     color: var(--text-primary-color);
 }
 
+h1 {
+    text-align: center;
+}
+
 h3 {
     color: var(--text-active-color);
 }
@@ -193,6 +197,15 @@ input:checked + .slider:before {
     font-size: 22px; 
 }
 
+.mobilenav {
+    display: none;
+}
+
+h1 {
+    margin: 0 auto;
+    font-style: italic;
+}
+
 @media screen and (max-width: 1006px) {
     :root {
       font-size: 12px;
@@ -219,6 +232,17 @@ input:checked + .slider:before {
 @media screen and (max-width: 887px) {
     .navrow {
       display: none;
+    }
+    .mobilenav {
+      display: block;
+      font-size: 22px;
+      text-align: right;
+      border-bottom: 1px var(--offset-color) solid;
+      border-left: 1px var(--offset-color) solid;
+      border-right: 1px var(--offset-color) solid;
+      border-radius: 0.5rem;
+      color: var(--text-primary-color);
+      background-color: var(--bg-secondary-color);
     }
     .introduction {
       width: 80vw;
