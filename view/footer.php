@@ -1,3 +1,11 @@
+<?php if($page != "home") {
+    echo "<style>
+             .cookiespopup{
+                 display: none;
+             }
+         </style>";
+}
+?>
 <div class="container cookiespopup" id="cookies">
     <div class="row col-10">
         <p class="text-center">This website uses cookies to enhance your viewing and surfing experience. This is your obligatory notice that we use cookies on this website.🍪</p>
