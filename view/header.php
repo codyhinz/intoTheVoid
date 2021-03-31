@@ -31,43 +31,16 @@
             <img src="./view/shadowformicon.jpg" width="40" height="41" margin-left="0" alt="Shadow Form Icon">
             <div class="heading navigation col-2" id="<?php if ($page == "home"){ echo "active";}?>"><a href="#" class="stretched-link">Home</a></div>
             <div class="heading navigation col-2" id="<?php if ($page == "pveguide"){ echo "active";}?>"><a href="#" class="stretched-link">PVE Guides</a></div>
-            <div class="heading navigation col-2" id="<?php if ($page == "bislist"){ echo "active";}?>"><a href="#" class="stretched-link">Best In Slot List</a></div>
+            <div class="heading navigation col-2" id="<?php if ($page == "bislist"){ echo "active";}?>"><a href="#" class="stretched-link">Best in Slot List</a></div>
             <div class="heading navigation col-2" id="<?php if ($page == "dpscalulator"){ echo "active";}?>"><a href="#" class="stretched-link">DPS Calculator</a></div>
             <div class="col-1"></div>
-            <div class="heading col-2">
+            <div class="heading col-2 align-items-end">
                 <div class="container">
                     <label id="switch" class="switch">
                         <input type="checkbox" onchange="toggleTheme()" id="slider">
                         <span class="slider round"></span>
                     </label>
                 </div>
-            <script>
-                // function to set a given theme/color-scheme
-                function setTheme(themeName) {
-                    localStorage.setItem('theme', themeName);
-                    document.documentElement.className = themeName;
-                }
-
-                // function to toggle between light and dark theme
-                function toggleTheme() {
-                    if (localStorage.getItem('theme') === 'theme-dark') {
-                        setTheme('theme-light');
-                    } else {
-                        setTheme('theme-dark');
-                    }
-                }
-
-                // Immediately invoked function to set the theme on initial load
-                (function () {
-                    if (localStorage.getItem('theme') === 'theme-dark') {
-                        setTheme('theme-dark');
-                        document.getElementById('slider').checked = false;
-                    } else {
-                        setTheme('theme-light');
-                    document.getElementById('slider').checked = true;
-                    }
-                })();
-            </script>
             </div>
         </div>
     </div>
@@ -75,5 +48,11 @@
         <div class="row">
             <h1 class="col-8">Into the Void</h1>
             <div class="col-2 align-items-end"><button class="btn" onclick="nav()"><img src="./view/hamburger.png" width="21" height="23" class="hamburgericon"></button></div>
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center">Home</div>
+            <div class="row justify-content-center">PVE Guides</div>
+            <div class="row justify-content-center">Best In Slot List</div>
+            <div class="row justify-content-center">DPS Calculator</div>
         </div>
     </div>
