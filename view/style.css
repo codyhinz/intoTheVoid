@@ -191,7 +191,7 @@ input:checked + .slider:before {
 }
 
 #xicon {
-    bottom: 10vh;
+    bottom: 9vh;
     right: 1vw;
     font-size: 22px; 
 }
@@ -201,8 +201,41 @@ input:checked + .slider:before {
 }
 
 h1 {
-    margin: 0 auto;
     font-style: italic;
+    margin-left: 14vw;
+}
+
+footer {
+    background-color: var(--bg-secondary-color);
+}
+
+.topnav {
+    border-top: 1px var(--bg-tertiary-color) solid;
+    border-bottom: 1px var(--bg-tertiary-color) solid;
+    color: var(--text-primary-color);
+}
+
+.midnav {
+    border-bottom: 1px var(--bg-tertiary-color) solid;
+    color: var(--text-primary-color);
+}
+
+.bottomnav{
+    color: var(--text-primary-color);
+}
+
+.topnav a, .midnav a, .bottomnav a {
+    text-decoration: none;
+    color: var(--text-primary-color);
+}
+
+@media screen and (max-width: 1200px) {
+    .parseicon {
+        margin-top: 0;
+    }
+    .introduction {
+        margin: 10vh 2vw 0 2vw;
+    }
 }
 
 @media screen and (max-width: 1006px) {
@@ -210,23 +243,13 @@ h1 {
       font-size: 12px;
     }
     #xicon {
-      right: 4vw;
-      bottom: 10vh;
+      right: 2vw;
+      bottom: 8vh;
     }
     .cookiespopup {
         font-size: 16px;
     }
   }
-
-@media screen and (max-width: 469px) {
-    .cookiespopup {
-        font-size: 10px;
-    }
-    #xicon {
-        right: 10vw;
-        bottom: 8vh;
-    }
-}
 
 @media screen and (max-width: 887px) {
     .navrow {
@@ -251,18 +274,29 @@ h1 {
     }
   }
 
-
-@media screen and (max-width: 1200px) {
-    .parseicon {
-        margin-top: 0;
+@media screen and (max-width: 767px) {
+    #xicon {
+        right: 4vw;
+        bottom: 10vh;
     }
-    .introduction {
-        margin: 10vh 2vw 0 2vw;
+    .parseicon {
+        margin: 2vh 0 0 22vw;
     }
 }
 
 @media screen and (max-width: 530px) {
-    .parseicon {
-        margin-top: 10vh;
+    #xicon {
+        right: 7vw;
+        bottom: 9vh;
+    }
+}
+
+@media screen and (max-width: 469px) {
+    .cookiespopup {
+        font-size: 12px;
+    }
+    #xicon {
+        right: 8vw;
+        bottom: 9vh;
     }
 }

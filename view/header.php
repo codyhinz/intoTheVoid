@@ -49,10 +49,10 @@
             <h1 class="col-8">Into the Void</h1>
             <div class="col-2 align-items-end"><button class="btn" onclick="nav()"><img src="./view/hamburger.png" width="21" height="23" class="hamburgericon"></button></div>
         </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center">Home</div>
-            <div class="row justify-content-center">PVE Guides</div>
-            <div class="row justify-content-center">Best In Slot List</div>
-            <div class="row justify-content-center">DPS Calculator</div>
+        <div class="container-fluid" id="navmenu" style="display: none;">
+            <a href="#"><div class="row justify-content-center topnav">Home</div></a>
+            <a href="#"><div class="row justify-content-center midnav">PVE Guides</div></a>
+            <a href="#"><div class="row justify-content-center midnav">Best In Slot List</div></a>
+            <a href="#"><div class="row justify-content-center bottomnav">DPS Calculator</div></a>
         </div>
     </div>

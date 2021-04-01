@@ -11,10 +11,10 @@
     <div class="introduction col-xl-5 col-lg-11 col-md-11 col-sm-11">
         <h2>Who are you?</h2><hr/>
         <div class="row">
-            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-7 col-5">
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-11 col-11">
                 <p>I am a long time private server enjoyer with tons of experience on various servers(Atlantiss, Windrunner, Sunstrider, etc). I don't claim to be the best at anything, but I have done this progression about a dozen times. My only trackable achievements are my parses in classic. I have a rank 1 parse as a fury warrior on classic, and I hope to be the <span class="font-weight-bold">Rank 1 Shadow Priest</span> in Classic TBC.</p>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-6">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-11 col-11">
                 <img src="./view/rank1.jpg" width="110" height="110" alt="Rank 1 Parse" class="parseicon">
             </div>
         </div>    
