@@ -3,12 +3,12 @@
     include('./view/header.php');
 ?>
 <div class="row container">
-    <div class="introduction col-xl-5 col-lg-11 col-md-11 col-sm-11">
+    <div class="introduction col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
         <h2>Welcome Home&nbsp;<img src="./view/shadowwordpain.jpg" width="30" height="30" alt="Shadow Word Pain Icon" class="introicon"></h2><hr/>
         <p>This is our shadowy lair, and soon we will be journeying into the dark portal again. Lucky for you Blizzard has blessed us into viability. I plan on playing a Draenei Shadow Priest in The Burning Crusade Classic, and I can't wait for the prepatch to hit live servers. This website is dedicated to all lovers of the world of shadows (no warlocks allowed, sorry). Join me as I attempt to create the best encapsulation of all things Shadow Priest to help your journey into The Burning Crusade Classic.
         </p>
     </div>
-    <div class="introduction col-xl-5 col-lg-11 col-md-11 col-sm-11">
+    <div class="introduction col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
         <h2>Who are you?</h2><hr/>
         <div class="row">
             <div class="col-xl-9 col-lg-9 col-md-9 col-sm-11 col-11">
