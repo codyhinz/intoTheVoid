@@ -63,9 +63,9 @@
             </div>
         </div>
         <div class="container-fluid" id="navmenu" style="display: none;">
-            <a href="#"><div class="row justify-content-center topnav">Home</div></a>
-            <a href="#"><div class="row justify-content-center midnav">PVE Guides</div></a>
-            <a href="#"><div class="row justify-content-center midnav">Best In Slot List</div></a>
-            <a href="#"><div class="row justify-content-center bottomnav">DPS Calculator</div></a>
+            <a href="#"><div class="row justify-content-center topnav" id="<?php if ($page == "home"){ echo "active";}?>">Home</div></a>
+            <a href="#"><div class="row justify-content-center midnav" id="<?php if ($page == "pveguide"){ echo "active";}?>">PVE Guides</div></a>
+            <a href="#"><div class="row justify-content-center midnav" id="<?php if ($page == "bislist"){ echo "active";}?>">Best In Slot List</div></a>
+            <a href="#"><div class="row justify-content-center bottomnav" id="<?php if ($page == "dpscalulator"){ echo "active";}?>">DPS Calculator</div></a>
         </div>
     </div>
