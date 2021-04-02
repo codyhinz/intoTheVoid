@@ -23,9 +23,9 @@ function toggleTheme() {
 // Immediately invoked function to set the theme on initial load
 (function () {
   if (localStorage.getItem('theme') === 'theme-dark') {
-      setTheme('theme-dark');
-  } else {
       setTheme('theme-light');
+  } else {
+      setTheme('theme-dark');
   }
 })();
 
