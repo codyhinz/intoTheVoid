@@ -203,6 +203,7 @@ input:checked + .slider:before {
 h1 {
     font-style: italic;
     margin-left: 14vw;
+    font-size: 28px;
 }
 
 footer {
