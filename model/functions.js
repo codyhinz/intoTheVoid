@@ -31,9 +31,15 @@ function toggleTheme() {
 
 function nav() {
   var y = document.getElementById("navmenu");
+  var z = document.getElementById("hamburgericon");
+
   if (y.style.display === "none") {
     y.style.display = "block";
+    z.style.transform = "rotate(90deg)";
   } else {
-    y.style.display = "none";
+      if (z.style.transform === "rotate(90deg)") {
+        z.style.transform = "rotate(180deg)";
+        y.style.display = "none";
+    }
   }
 }

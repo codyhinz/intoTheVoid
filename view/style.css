@@ -73,6 +73,9 @@ p {
 
 h1 {
     text-align: center;
+    font-style: italic;
+    margin: 0.1vh 4vw 0 10vw;
+    font-size: 26px;
 }
 
 h3 {
@@ -113,6 +116,10 @@ footer {
     width: 70px;
     height: 28px;
   }
+
+#hamburgericon {
+    margin: -2vh 0 0 0;
+}
 
 /* Hide default HTML checkbox */
 .switch input {
@@ -200,11 +207,7 @@ input:checked + .slider:before {
     display: none;
 }
 
-h1 {
-    font-style: italic;
-    margin-left: 14vw;
-    font-size: 28px;
-}
+
 
 footer {
     background-color: var(--bg-secondary-color);
@@ -230,6 +233,9 @@ footer {
     color: var(--text-primary-color);
 }
 
+
+/*Media Queries*/
+
 @media screen and (max-width: 1200px) {
     .parseicon {
         margin-top: 0;
@@ -248,9 +254,15 @@ footer {
       bottom: 8vh;
     }
     .cookiespopup {
-        font-size: 16px;
+      font-size: 16px;
     }
   }
+
+@media screen and (min-width: 1200px){
+    #introless {
+      margin-top: 0;
+    }
+}
 
 @media screen and (max-width: 887px) {
     .navrow {

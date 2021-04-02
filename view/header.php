@@ -46,8 +46,20 @@
     </div>
     <div class="container col-11 mobilenav">
         <div class="row">
-            <h1 class="col-8">Into the Void</h1>
-            <div class="col-2 align-items-end"><button class="btn" onclick="nav()"><img src="./view/hamburger.png" width="21" height="23" class="hamburgericon"></button></div>
+            <div class="col-2 align-items-end">
+                <button class="btn" onclick="nav()">
+                    <img src="./view/hamburger.png" width="40" height="38" id="hamburgericon">
+                </button>
+            </div>
+            <h1 class="col-5">Into the Void</h1>
+            <div class="col-2 heading">
+                <div class="container">
+                    <label id="switch" class="switch">
+                        <input type="checkbox" onchange="toggleTheme()" id="slider">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
         </div>
         <div class="container-fluid" id="navmenu" style="display: none;">
             <a href="#"><div class="row justify-content-center topnav">Home</div></a>
