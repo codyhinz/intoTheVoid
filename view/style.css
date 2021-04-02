@@ -4,14 +4,6 @@
     font-family: "Arial", sans-serif;
 }
 
-.theme-dark {
-    --bg-primary-color: #1D1F29;
-    --bg-secondary-color: #222431;
-    --bg-tertiary-color: #36384A;
-    --text-primary-color: #C3C1CF;
-    --text-active-color: #fff;
-}
-
 .theme-light {
     --bg-primary-color: #f9f9fa;
     --bg-secondary-color: #e7e6ec;
@@ -20,6 +12,13 @@
     --text-active-color: #000;
 }
 
+.theme-dark {
+    --bg-primary-color: #1D1F29;
+    --bg-secondary-color: #222431;
+    --bg-tertiary-color: #36384A;
+    --text-primary-color: #C3C1CF;
+    --text-active-color: #fff;
+}
 
 body {
     margin: 0;
