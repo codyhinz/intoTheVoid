@@ -109,6 +109,10 @@ footer {
     margin-top: 6vh;
 }
 
+.space {
+    margin-top: 10vh;
+}
+
 .switch {
     position: relative;
     display: inline-block;

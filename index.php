@@ -22,8 +22,7 @@
 </div>
 <div class="row container col-12">
     <div class="introduction" id="introless">
-        <h2>What is this for?</h2><hr/>
+        <h2>What is this for?</h2><hr>
         <p>Have you ever attempted to find TBC specific information? It is an absolute nightmare, and super inconsistent. I'm not exactly sure why this is the case(probably because at best we have private server guesses), but from 2.0-2.4.3 is very difficult to get solid information. This website will specifically focus on everything I can 100% confirm, and if it's not 100% confirmed their will be at least solid sources.</p>
     </div>
 </div>
-<?php include('./view/footer.php');?>
