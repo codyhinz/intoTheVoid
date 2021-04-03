@@ -113,6 +113,34 @@ footer {
     margin-top: 10vh;
 }
 
+.draenei {
+    list-style: url(./images/draenei.png);
+}
+
+.dwarf {
+    list-style: url(./images/dwarf.png);
+}
+
+.human {
+    list-style: url(./images/human.png);
+}
+
+.nightelf {
+    list-style: url(./images/nightelf.png);
+}
+
+.bloodelf {
+    list-style: url(./images/bloodelf.png);
+}
+
+.troll {
+    list-style: url(./images/troll.png);
+}
+
+.undead {
+    list-style: url(./images/undead.png);
+}
+
 .switch {
     position: relative;
     display: inline-block;
