@@ -43,12 +43,13 @@
         <div class="mt-5"><h2 class="text-primary"><img src="./view/images/alliance.png" width="50" height="40">&nbsp;Alliance</h2></div>
     </div>
     <div class="row col-12">
-        <div class="col-xl-7 col-lg-7 col-md-7 mt-2">
+        <div class="col-xl-7 col-lg-7 col-md-12 mt-2">
+            <h5 class="font-weight-bold">Draenei:</h5>
             <p>In terms of PVE the alliance have a massive advantage; the draenei.
                 Bringing their 1% spell hit into the equation, this means you can gear even less for spell hit.
-                Inspiring presence is by far and away the best racial for shadow priests</p>
+                Inspiring presence is by far and away the best racial for shadow priests.</p>
         </div>
-        <div class="col-xl-5 col-lg-5 col-md-5">
+        <div class="col-xl-5 col-lg-5 col-md-12 mt-4">
             <img src="./view/images/inspiringpresence.png" class="img-fluid">
         </div>
     </div>
