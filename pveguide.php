@@ -1,6 +1,7 @@
 <?php 
     $page = "pveguide";
     include('./view/header.php');
+    $race = $_GET["racials"] ?? "";
 ?>
 
 <div class="container introduction col-11">
@@ -40,7 +41,32 @@
             </ul>
         </div>
     </div>
-    <?php include('./model/racials.php'); ?>
+    <div class="row">
+    <div class="col-6">
+        <div><h2 class="text-primary"><img src="./view/images/alliance.png" width="50" height="40" alt="Alliance Icon">&nbsp;Alliance</h2></div>
+    </div>
+    <div class="col-6 mt-3">
+        <form method="get" action="pveguide.php">
+            <select class="dropdownclass" name="racials">
+                <option value="draenei" <?php if ($race == "draenei"){echo "selected";}?>>Draenei</option>
+                <option value="dwarf" <?php if ($race == "dwarf"){echo "selected";}?>>Dwarf</option>
+            </select>
+            <button class="btn btn-primary ml-5 btn-sm mb-1" type="submit" value="submit">Submit</button>
+        </form>
+    </div>
 </div>
+
+<?php
+    if ($race == 'draenei') {
+        include('./model/draenei.php');
+    } elseif ($race == 'dwarf') {
+        include('./model/dwarf.php');
+    } else {
+        include('./model/draenei.php');
+    }
+?>
+</div>
+
+
 
 <?php include('./view/footer.php');?>

@@ -1,4 +1,4 @@
-<div class="row col-12">
+<div class="row col-12 mt-5">
     <div class="col-xl-7 col-lg-7 col-md-12 mt-2">
         <h5 class="font-weight-bold text-primary">Draenei:</h5>
         <p>Chastise is an interesting ability, but I doubt you will find much use for it in PVE.
