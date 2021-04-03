@@ -19,10 +19,10 @@
     </div>
     <div class="row col-12 mt-5">
         <div class="col-6">
-            <h5>Alliance<img src="./view/alliance.png" width="45" height="40"></h5>
+            <h5>Alliance<img src="./view/images/alliance.png" width="45" height="40"></h5>
         </div>
         <div class="col-6">
-            <h5>Horde<img src="./view/horde.png" width="45" height="40"></h5>
+            <h5>Horde<img src="./view/images/horde.png" width="45" height="40"></h5>
             
         </div>
     </div>
