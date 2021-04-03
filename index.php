@@ -39,3 +39,4 @@
         and if it's not 100% confirmed their will be at least solid sources.</p>
     </div>
 </div>
+<?php include('./view/footer.php');?>
