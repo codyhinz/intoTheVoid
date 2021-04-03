@@ -6,7 +6,7 @@
 <div class="container introduction col-11">
     <div class="row">
         <div class="col-12">
-            <h2>Player vs. Everything Guides</h2><hr/>
+            <h2>Player vs. Environment Guides</h2><hr/>
         </div>
     </div>
     <div class="row">
