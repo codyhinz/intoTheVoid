@@ -42,31 +42,34 @@
         </div>
     </div>
     <div class="row">
-    <div class="col-6">
-        <div><h2 class="text-primary"><img src="./view/images/alliance.png" width="50" height="40" alt="Alliance Icon">&nbsp;Alliance</h2></div>
+        <?php
+            if ($race == "draenei") {
+                include('./view/alliancebanner.php');
+            } else {
+                include('./view/hordebanner.php');
+            }
+        ?>
+        <div class="col-6 mt-3">
+            <form method="get" action="pveguide.php"'>
+                <select class="dropdownclass" name="racials" onchange='this.form.submit()'>
+                    <option value="draenei" <?php if ($race == "draenei"){echo "selected";}?>>Draenei</option>
+                    <option value="dwarf" <?php if ($race == "dwarf"){echo "selected";}?>>Dwarf</option>
+                </select>
+                <noscript><input type="submit" value="Submit"></noscript>
+            </form>
+        </div>
     </div>
-    <div class="col-6 mt-3">
-        <form method="get" action="pveguide.php">
-            <select class="dropdownclass" name="racials">
-                <option value="draenei" <?php if ($race == "draenei"){echo "selected";}?>>Draenei</option>
-                <option value="dwarf" <?php if ($race == "dwarf"){echo "selected";}?>>Dwarf</option>
-            </select>
-            <button class="btn btn-primary ml-5 btn-sm mb-1" type="submit" value="submit">Submit</button>
-        </form>
-    </div>
-</div>
 
 <?php
     if ($race == 'draenei') {
         include('./model/draenei.php');
     } elseif ($race == 'dwarf') {
         include('./model/dwarf.php');
-    } else {
+    } else  {
         include('./model/draenei.php');
     }
 ?>
+
 </div>
-
-
 
 <?php include('./view/footer.php');?>
