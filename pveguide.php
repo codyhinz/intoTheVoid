@@ -43,7 +43,7 @@
     </div>
     <div class="row">
         <?php
-            if ($race == "draenei") {
+            if ($race == "draenei" || $race == "") {
                 include('./view/alliancebanner.php');
             } else {
                 include('./view/hordebanner.php');
