@@ -141,6 +141,26 @@ footer {
     list-style: url(./images/undead.png);
 }
 
+.mb {
+    list-style: url(./images/mb.jpg);
+}
+
+.mf {
+    list-style: url(./images/mf.jpg);
+}
+
+.swp {
+    list-style: url(./images/swp.jpg);
+}
+
+.swd {
+    list-style: url(./images/swd.jpg);
+}
+
+.vt {
+    list-style: url(./images/vt.jpg);
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -238,10 +258,10 @@ input:checked + .slider:before {
     display: none;
 }
 
-
-
 footer {
     background-color: var(--bg-secondary-color);
+    -webkit-box-shadow: 0px -4px 11px 0px rgba(0,0,0,0.55); 
+    box-shadow: 0px -4px 11px 0px rgba(0,0,0,0.55);
 }
 
 .topnav {

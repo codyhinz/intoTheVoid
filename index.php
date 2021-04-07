@@ -36,7 +36,8 @@
         I'm not exactly sure why this is the case(probably because at best we have private server guesses),
         but from 2.0-2.4.3 is very difficult to get solid information. 
         This website will specifically focus on everything I can 100% confirm, 
-        and if it's not 100% confirmed their will be at least solid sources.</p>
+        and if it's not 100% confirmed their will be at least solid sources. 
+        <?php include('./model/damagecalc.php')?></p>
     </div>
 </div>
 <?php include('./view/footer.php');?>
