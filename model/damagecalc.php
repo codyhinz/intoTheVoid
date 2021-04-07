@@ -72,8 +72,8 @@
     $spellpower = 600;
 
     $critchance = 10;
-    $critroll = rand(1, 100);
-    $criticalstrike = "false";
+    $criticalstrikeswd = "false";
+    $criticalstrikemb = "false";
 
     $svone = 1.02;
     $svtwo = 1.04;
@@ -86,19 +86,9 @@
     $mftick = 176 + ($spellpower * 0.19);
 
     $mb = rand(708, 748) + ($spellpower * 0.4286);
-    
-    if ($critroll <= $critchance) {
-        $mb = $mb * 1.5;
-        $criticalstrike = "true";
-    }
-
     $swd = rand(572,662) + ($spellpower * 0.4286);
 
-    if ($critroll <= $critchance) {
-        $swd = $swd * 1.5;
-        $criticalstrike = "true";
-    }
-
+    // Will most likely have to move to each phase ^
 
     $swptick = 1648 + ($spellpower * 1.1);
     $swptick = $swptick / 8;
@@ -118,7 +108,7 @@
     -Second 11($dmgphaseeight) (1.1SV + 0.05M * (MF tick) (VT has 5.5 seconds left, SWP has 14.5 seconds left))
     -Second 12($dmgphasenine) (1.1SV + 0.05M * (MF tick) (VT has 4.5 seconds left, SWP has 13.5 seconds left)
     -Second 13($dmgphaseten) (1.1SV + 0.05M * (MF tick) (VT has 3.5 seconds left, SWP has 12.5 seconds left)
-    -Second 13.5($dmgphaseeleven) (1.1SV + 0.05M) (Cast MB - 1.5 sec cast time) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks)) (VT has 3 seconds left, SWP has 12 seconds left))
+    -Second 13.5($dmgphaseeleven) (1.1SV + 0.05M * (Cast MB - 1.5 sec cast time) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks)) (VT has 3 seconds left, SWP has 12 seconds left))
     -Second 15($dmgphasetwelve) (1.1SV + 0.05M * (MB damage roll - can crit) (Cast VT 1.5 sec) (VT has 1.5 seconds left, SWP has 10.5 seconds left))
     -Second 16.5($dmgphasethirteen) (1.1SV + 0.05M * (VT lands) ((1.02SV + 0.05M * VT ticks) FINAL VT TICK, (1.04SV + 0.05M * SWP ticks)) (VT has 15 seconds left, SWP has 12 seconds left))
     -Second 19($dmgphasefourteen) (1.1SV + 0.05M * (MF tick) (VT has 12.5 seconds left, SWP has 9.5 seconds left))
@@ -139,11 +129,18 @@
     echo "<h3>Combat Log:</h3><ol><br>";
 
     // $dmgphaseone
-    // (1.04SV + 0.05M * (MB damage roll - can crit)) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
+    // (1.04SV + 0.05M * (MB can crit)) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
+
+    $critroll = rand(1, 100);
+
+    if ($critroll <= $critchance) {
+        $mb = $mb * 1.5;
+        $criticalstrikemb = "true";
+    }
 
     $dmgphaseonecrit = false;
     $dmgphaseonemb = (($svtwo + $misery) * ($mb)) * ($damagemultiplier);
-    if ($criticalstrike == "true") { $dmgphaseonecrit = true; }
+    if ($criticalstrikemb == "true") { $dmgphaseonecrit = true; }
     $dmgphaseonemb = round($dmgphaseonemb);
     if ($dmgphaseonecrit == true) {
         $dmgphaseonecrit = " damage and it was a critical strike.</li>";
@@ -158,7 +155,9 @@
     $dmgphaseonevt = round($dmgphaseonevt);
 
 
-    echo "<li class=mb>&nbsp;&nbsp;Mind Blast hits the target for " . $dmgphaseonemb . $dmgphaseonecrit;
+    $dmgphaseone = $dmgphaseonemb + $dmgphaseoneswp + $dmgphaseonevt;
+
+    echo "<li class=mb>&nbsp;&nbsp;Mind Blast hits for " . $dmgphaseonemb . $dmgphaseonecrit;
     echo "<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for " . $dmgphaseoneswp . " damage.</li>";
     echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphaseonevt . " damage.</li>";
 
@@ -187,7 +186,111 @@
     $dmgphasefourswp = (($svtwo + $misery) * ($swptick)) * ($damagemultiplier);
     $dmgphasefourswp = round($dmgphasefourswp);
 
+    $dmgphasefour = $dmgphasefourswp + $dmgphasefourvt;
+
     echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphasefourswp . " damage.</li>";
     echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphasefourvt . " damage.</li>";
 
-    
+    // $dmgphasefive
+    // (1.08SV + 0.05M * MF Tick)
+
+    $dmgphasefive = (($svfour + $misery) * ($mftick)) * ($damagemultiplier);
+    $dmgphasefive = round($dmgphasefive);
+
+    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasefive . " damage.</li>";
+
+    // $dmgphasesix
+    // (1.08SV + 0.05M * (SWD can crit)
+
+    $critroll = rand(1, 100);
+
+    if ($critroll <= $critchance) {
+        $swd = $swd * 1.5;
+        $criticalstrikeswd = "true";
+    }
+
+    $dmgphasesixcrit = false;
+    $dmgphasesix = (($svfour + $misery) * ($swd)) * ($damagemultiplier);
+    if ($criticalstrikeswd == "true") { $dmgphasesixcrit = true; }
+    $dmgphasesix = round($dmgphasesix);
+    if ($dmgphasesixcrit == true) {
+        $dmgphasesixcrit = " damage and it was a critical strike.</li>";
+    } else {
+        $dmgphasesixcrit = " damage.</li>";
+    }
+
+    echo "<li class=swd>&nbsp;&nbsp;Shadow Word Death hits for " . $dmgphasesix . $dmgphasesixcrit;
+
+    // $dmgphaseseven
+    // (1.1SV + 0.05M) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
+
+    $dmgphasesevenvt = (($svone + $misery) * ($vttick)) * ($damagemultiplier);
+    $dmgphasesevenvt = round($dmgphasesevenvt);
+
+    $dmgphasesevenswp = (($svtwo + $misery) * ($swptick)) * ($damagemultiplier);
+    $dmgphasesevenswp = round($dmgphasesevenswp);
+
+    $dmgphaseseven = $dmgphasesevenswp + $dmgphasesevenvt;
+
+    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphasesevenswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphasesevenvt . " damage.</li>";
+
+    // $dmgphaseeight
+    // (1.1SV + 0.05M * MF tick)
+
+    $dmgphaseeight = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
+    $dmgphaseeight = round($dmgphaseeight);
+
+    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphaseeight . " damage.</li>";
+
+    // $dmgphasenine
+    // (1.1SV + 0.05M * MF tick)
+
+    $dmgphasenine = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
+    $dmgphasenine = round($dmgphasenine);
+
+    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasenine . " damage.</li>";
+
+    // $dmgphaseten
+    // (1.1SV + 0.05M * MF tick)
+
+    $dmgphaseten = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
+    $dmgphaseten = round($dmgphaseten);
+
+    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphaseten . " damage.</li>";
+
+    // $dmgphaseeleven
+    // (1.1SV + 0.05M) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
+
+    $dmgphaseelevenvt = (($svone + $misery) * ($vttick)) * ($damagemultiplier);
+    $dmgphaseelevenvt = round($dmgphaseelevenvt);
+
+    $dmgphaseelevenswp = (($svtwo + $misery) * ($swptick)) * ($damagemultiplier);
+    $dmgphaseelevenswp = round($dmgphaseelevenswp);
+
+    $dmgphaseeleven = $dmgphaseelevenswp + $dmgphaseelevenvt;
+
+    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphaseelevenswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphaseelevenvt . " damage.</li>";
+
+    // $dmgphasetwelve
+    // (1.1SV + 0.05M * MB damage roll - can crit)
+
+    $critroll = rand(1, 100);
+
+    if ($critroll <= $critchance) {
+        $mb = $mb * 1.5;
+        $criticalstrikemb = "true";
+    }
+
+    $dmgphasetwelvecrit = false;
+    $dmgphasetwelve = (($svfive + $misery) * ($mb)) * ($damagemultiplier);
+    if ($criticalstrikemb == "true") { $dmgphasetwelvecrit = true; }
+    $dmgphasetwelve = round($dmgphasetwelve);
+    if ($dmgphasetwelvecrit == true) {
+        $dmgphasetwelvecrit = " damage and it was a critical strike.</li>";
+    } else {
+        $dmgphasetwelvecrit = " damage.</li>";
+    }
+
+    echo "<li class=mb>&nbsp;&nbsp;Mind Blast hits for " . $dmgphasetwelve . $dmgphasetwelvecrit;
