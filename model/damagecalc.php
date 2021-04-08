@@ -131,18 +131,21 @@
     // $dmgphaseone
     // (1.04SV + 0.05M * (MB can crit)) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
 
-    $critroll = rand(1, 100);
+    $critrollone = rand(1, 100);
+    $criticalstrikembone = "false";
 
-    if ($critroll <= $critchance) {
+    if ($critrollone <= $critchance) {
         $mb = $mb * 1.5;
-        $criticalstrikemb = "true";
+        $criticalstrikembone = "true";
     }
 
-    $dmgphaseonecrit = false;
+    $dmgphaseonecrit = "false";
     $dmgphaseonemb = (($svtwo + $misery) * ($mb)) * ($damagemultiplier);
-    if ($criticalstrikemb == "true") { $dmgphaseonecrit = true; }
+    if ($criticalstrikembone == "true") {
+        $dmgphaseonecrit = "true";
+    }
     $dmgphaseonemb = round($dmgphaseonemb);
-    if ($dmgphaseonecrit == true) {
+    if ($dmgphaseonecrit == "true") {
         $dmgphaseonecrit = " damage and it was a critical strike.</li>";
     } else {
         $dmgphaseonecrit = " damage.</li>";
@@ -201,9 +204,9 @@
     // $dmgphasesix
     // (1.08SV + 0.05M * (SWD can crit)
 
-    $critroll = rand(1, 100);
+    $critrolltwo = rand(1, 100);
 
-    if ($critroll <= $critchance) {
+    if ($critrolltwo <= $critchance) {
         $swd = $swd * 1.5;
         $criticalstrikeswd = "true";
     }
@@ -275,18 +278,21 @@
     // $dmgphasetwelve
     // (1.1SV + 0.05M * MB damage roll - can crit)
 
-    $critroll = rand(1, 100);
+    $critrollthree = rand(1, 100);
+    $criticalstrikembtwo = "false";
 
-    if ($critroll <= $critchance) {
+    if ($critrollthree <= $critchance) {
         $mb = $mb * 1.5;
-        $criticalstrikemb = "true";
+        $criticalstrikembtwo = "true";
     }
 
-    $dmgphasetwelvecrit = false;
+    $dmgphasetwelvecrit = "false";
     $dmgphasetwelve = (($svfive + $misery) * ($mb)) * ($damagemultiplier);
-    if ($criticalstrikemb == "true") { $dmgphasetwelvecrit = true; }
+    if ($criticalstrikembtwo == "true") {
+        $dmgphasetwelvecrit = "true";
+    }
     $dmgphasetwelve = round($dmgphasetwelve);
-    if ($dmgphasetwelvecrit == true) {
+    if ($dmgphasetwelvecrit == "true") {
         $dmgphasetwelvecrit = " damage and it was a critical strike.</li>";
     } else {
         $dmgphasetwelvecrit = " damage.</li>";
@@ -398,18 +404,21 @@
     // $dmgphasetwentytwo
     // (1.1SV + 0.05M * MB damage roll - can crit)
 
-    $critroll = rand(1, 100);
+    $critrollfour = rand(1, 100);
+    $criticalstrikembthree = "false";
 
-    if ($critroll <= $critchance) {
+    if ($critrollfour <= $critchance) {
         $mb = $mb * 1.5;
-        $criticalstrikemb = "true";
+        $criticalstrikembthree = "true";
     }
 
-    $dmgphasetwentytwocrit = false;
+    $dmgphasetwentytwocrit = "false";
     $dmgphasetwentytwo = (($svfive + $misery) * ($mb)) * ($damagemultiplier);
-    if ($criticalstrikemb == "true") { $dmgphasetwentytwocrit = true; }
+    if ($criticalstrikembthree == "true") {
+        $dmgphasetwentytwocrit = "true";
+    }
     $dmgphasetwentytwo = round($dmgphasetwentytwo);
-    if ($dmgphasetwentytwocrit == true) {
+    if ($dmgphasetwentytwocrit == "true") {
         $dmgphasetwentytwocrit = " damage and it was a critical strike.</li>";
     } else {
         $dmgphasetwentytwocrit = " damage.</li>";
@@ -457,6 +466,9 @@
     $dps = $totaldamage / 30;
     $dps = round($dps);
 
+    $dpsmin = $dps - 40;
+    $dpsmax = $dps + 40;
+
     // Mind Blast Stats
     $mbdamagetotal = $dmgphasetwentytwo + $dmgphasetwelve + $dmgphaseonemb;
 
@@ -490,7 +502,16 @@
     $swddamagepercent = $swddamagepercent * 100;
     $swddamagepercent = round($swddamagepercent);
 
-    echo "<div class='col-xl-6 col-lg-6 col-md-6 mt-2 ml-md-5 ml-lg-0'><h4 class=mb-3>Damage:</h4>";
+    // Vampiric Touch Stats
+    $vtdamagetotal = $dmgphaseonevt + $dmgphasefourvt + $dmgphasesevenvt + $dmgphaseelevenvt +
+                        $dmgphasethirteenvt + $dmgphasefifteenvt + $dmgphaseeighteenvt +
+                        $dmgphasetwentyonevt + $dmgphasetwentythree;
+
+    $vtdamagepercent = $vtdamagetotal / $totaldamage;
+    $vtdamagepercent = $vtdamagepercent * 100;
+    $vtdamagepercent = round($vtdamagepercent);
+
+    echo "<div class='col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mt-2 ml-lg-0 mr-lg-0 ml-5 mr-5 ml-lg-0'><h4 class=mb-3>Damage:</h4>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Spell Power: </div>" . "<div class=col-6>" . $spellpower . "</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Crit Chance: </div>" . "<div class=col-6>" . $critchance . "%</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Total Damage: </div>" . "<div class=col-6>" . $totaldamage . " damage</div></div>";
@@ -500,6 +521,8 @@
     echo "<div class=row><div class='col-6 font-weight-bold'>Total - Mind Flay: </div>" . "<div class=col-6>" . $mfdamagetotal . " damage (" . $mfdamagepercent . "%)</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Total - Shadow Word Death: </div>" . "<div class=col-6>" . $swddamagetotal . " damage (" . $swddamagepercent . "%)</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Total - Shadow Word Pain: </div>" . "<div class=col-6>" . $swpdamagetotal . " damage (" . $swpdamagepercent . "%)</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Total - Vampiric Touch: </div>" . "<div class=col-6>" . $vtdamagetotal . " damage (" . $vtdamagepercent . "%)</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Average DPS: </div>" . "<div class=col-6>" . $dpsmin . "-" . $dpsmax . " per/sec</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Damage per Second: </div>" . "<div class=col-6>" . $dps . " per/sec</div></div></div></div>";
 
     //</div></div></div>

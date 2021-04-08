@@ -34,7 +34,7 @@ body {
 }
 
 #active {
-    background-color: var(--bg-tertiary-color);
+    background-color: var(--bg-secondary-color);
     border-bottom: 0.3rem var(--offset-color) solid;
 }
 
