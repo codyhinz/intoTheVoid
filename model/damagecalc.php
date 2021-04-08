@@ -448,6 +448,12 @@
                     $dmgphasesixteen + $dmgphaseseventeen + $dmgphaseeighteen + $dmgphasenineteen + $dmgphasetwenty +
                     $dmgphasetwentyone + $dmgphasetwentytwo + $dmgphasetwentythree + $dmgphasetwentyfour + $dmgphasetwentyfive; 
     
+    $totalmana = $totaldamage * 0.05;
+    $totalmana = round($totalmana);
+    
+    $totalmps = $totalmana / 30;
+    $totalmps = round($totalmps);
+
     $dps = $totaldamage / 30;
     $dps = round($dps);
 
@@ -488,6 +494,8 @@
     echo "<div class=row><div class='col-6 font-weight-bold'>Spell Power: </div>" . "<div class=col-6>" . $spellpower . "</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Crit Chance: </div>" . "<div class=col-6>" . $critchance . "%</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Total Damage: </div>" . "<div class=col-6>" . $totaldamage . " damage</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Total Mana Regenerated: </div>" . "<div class=col-6>" . $totalmana . " mana</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Total Mana per Second: </div>" . "<div class=col-6>" . $totalmps . " mana per/sec</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Total - Mind Blast: </div>" . "<div class=col-6>" . $mbdamagetotal . " damage (" . $mbdamagepercent . "%)</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Total - Mind Flay: </div>" . "<div class=col-6>" . $mfdamagetotal . " damage (" . $mfdamagepercent . "%)</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Total - Shadow Word Death: </div>" . "<div class=col-6>" . $swddamagetotal . " damage (" . $swddamagepercent . "%)</div></div>";
