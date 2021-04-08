@@ -1,5 +1,9 @@
 <?php
 
+    $spellpower = filter_input(INPUT_GET, 'spellpower', FILTER_VALIDATE_INT);
+    $critchance = filter_input(INPUT_GET, 'critchance', FILTER_VALIDATE_INT);
+
+
     // Spell Critical strike chance does 150% damage
     // Spell Hit - Casters baseline need 15%, we gain 10% from talents. 12.6 spell hit to 1% spell hit.
 
@@ -69,9 +73,6 @@
     $shadowForm = $damagemultiplier * 1.15;
 
     $damagemultiplier = $darkness + $shadowForm - 1;
-    $spellpower = 1268;
-
-    $critchance = 13.87;
     $criticalstrikeswd = "false";
     $criticalstrikemb = "false";
 
@@ -85,16 +86,16 @@
 
     $mftick = 176 + ($spellpower * 0.19);
 
-    $mb = mt_rand(708, 748) + ($spellpower * 0.4286);
     $swd = mt_rand(572,662) + ($spellpower * 0.4286);
-
-    // Will most likely have to move to each phase ^
 
     $swptick = 1648 + ($spellpower * 1.1);
     $swptick = $swptick / 8;
 
     $vttick = 650 + $spellpower;
     $vttick = $vttick / 5;
+
+    $spellpower = $_GET['spellpower'] ?? "600";
+    $critchance = $_GET['critchance'] ?? "10";
 
 /*    --Actual Damage Outputs--
 
@@ -134,13 +135,15 @@
     $critrollone = mt_rand(1, 100);
     $criticalstrikembone = "false";
 
+    $mbone = mt_rand(708, 748) + ($spellpower * 0.4286);
+
     if ($critrollone <= $critchance) {
-        $mb = $mb * 1.5;
+        $mbone = $mbone * 1.5;
         $criticalstrikembone = "true";
     }
 
     $dmgphaseonecrit = "false";
-    $dmgphaseonemb = (($svtwo + $misery) * ($mb)) * ($damagemultiplier);
+    $dmgphaseonemb = (($svtwo + $misery) * ($mbone)) * ($damagemultiplier);
     if ($criticalstrikembone == "true") {
         $dmgphaseonecrit = "true";
     }
@@ -281,13 +284,15 @@
     $critrollthree = mt_rand(1, 100);
     $criticalstrikembtwo = "false";
 
+    $mbtwo = mt_rand(708, 748) + ($spellpower * 0.4286);
+
     if ($critrollthree <= $critchance) {
-        $mb = $mb * 1.5;
+        $mbtwo = $mbtwo * 1.5;
         $criticalstrikembtwo = "true";
     }
 
     $dmgphasetwelvecrit = "false";
-    $dmgphasetwelve = (($svfive + $misery) * ($mb)) * ($damagemultiplier);
+    $dmgphasetwelve = (($svfive + $misery) * ($mbtwo)) * ($damagemultiplier);
     if ($criticalstrikembtwo == "true") {
         $dmgphasetwelvecrit = "true";
     }
@@ -407,13 +412,15 @@
     $critrollfour = mt_rand(1, 100);
     $criticalstrikembthree = "false";
 
+    $mbthree = mt_rand(708, 748) + ($spellpower * 0.4286);
+
     if ($critrollfour <= $critchance) {
-        $mb = $mb * 1.5;
+        $mbthree = $mbthree * 1.5;
         $criticalstrikembthree = "true";
     }
 
     $dmgphasetwentytwocrit = "false";
-    $dmgphasetwentytwo = (($svfive + $misery) * ($mb)) * ($damagemultiplier);
+    $dmgphasetwentytwo = (($svfive + $misery) * ($mbthree)) * ($damagemultiplier);
     if ($criticalstrikembthree == "true") {
         $dmgphasetwentytwocrit = "true";
     }
