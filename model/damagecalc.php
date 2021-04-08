@@ -85,8 +85,8 @@
 
     $mftick = 176 + ($spellpower * 0.19);
 
-    $mb = rand(708, 748) + ($spellpower * 0.4286);
-    $swd = rand(572,662) + ($spellpower * 0.4286);
+    $mb = mt_rand(708, 748) + ($spellpower * 0.4286);
+    $swd = mt_rand(572,662) + ($spellpower * 0.4286);
 
     // Will most likely have to move to each phase ^
 
@@ -131,7 +131,7 @@
     // $dmgphaseone
     // (1.04SV + 0.05M * (MB can crit)) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
 
-    $critrollone = rand(1, 100);
+    $critrollone = mt_rand(1, 100);
     $criticalstrikembone = "false";
 
     if ($critrollone <= $critchance) {
@@ -204,7 +204,7 @@
     // $dmgphasesix
     // (1.08SV + 0.05M * (SWD can crit)
 
-    $critrolltwo = rand(1, 100);
+    $critrolltwo = mt_rand(1, 100);
 
     if ($critrolltwo <= $critchance) {
         $swd = $swd * 1.5;
@@ -278,7 +278,7 @@
     // $dmgphasetwelve
     // (1.1SV + 0.05M * MB damage roll - can crit)
 
-    $critrollthree = rand(1, 100);
+    $critrollthree = mt_rand(1, 100);
     $criticalstrikembtwo = "false";
 
     if ($critrollthree <= $critchance) {
@@ -404,7 +404,7 @@
     // $dmgphasetwentytwo
     // (1.1SV + 0.05M * MB damage roll - can crit)
 
-    $critrollfour = rand(1, 100);
+    $critrollfour = mt_rand(1, 100);
     $criticalstrikembthree = "false";
 
     if ($critrollfour <= $critchance) {
