@@ -1,7 +1,7 @@
 <?php
 
-    $spellpower = filter_input(INPUT_GET, 'spellpower', FILTER_VALIDATE_INT);
-    $critchance = filter_input(INPUT_GET, 'critchance', FILTER_VALIDATE_INT);
+    $spellpower = filter_input(INPUT_POST, 'spellpower', FILTER_VALIDATE_INT);
+    $critchance = filter_input(INPUT_POST, 'critchance', FILTER_VALIDATE_INT);
 
 
     // Spell Critical strike chance does 150% damage
@@ -94,8 +94,8 @@
     $vttick = 650 + $spellpower;
     $vttick = $vttick / 5;
 
-    $spellpower = $_GET['spellpower'] ?? "600";
-    $critchance = $_GET['critchance'] ?? "10";
+    $spellpower = $_POST['spellpower'] ?? "600";
+    $critchance = $_POST['critchance'] ?? "10";
 
 /*    --Actual Damage Outputs--
 
