@@ -98,11 +98,6 @@ hr {
     color: var(--text-primary-color);
 }
 
-footer {
-    margin: 28vh 0 0 0;
-    border-top: 1px var(--offset-color) solid;
-}
-
 .parseicon {
     -webkit-box-shadow: 0px 4px 8px 5px rgba(0,0,0,0.2); 
     box-shadow: 0px 4px 8px 5px rgba(0,0,0,0.2);
@@ -260,8 +255,10 @@ input:checked + .slider:before {
 
 footer {
     background-color: var(--bg-secondary-color);
-    -webkit-box-shadow: 0px -4px 11px 0px rgba(0,0,0,0.55); 
-    box-shadow: 0px -4px 11px 0px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 0px 4px 8px 5px rgba(0,0,0,0.31); 
+    box-shadow: 0px 4px 8px 5px rgba(0,0,0,0.31);
+    margin: 28vh 0 0 0;
+    border-top: 1px var(--offset-color) solid;
 }
 
 .topnav {
