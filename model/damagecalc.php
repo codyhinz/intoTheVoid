@@ -69,9 +69,9 @@
     $shadowForm = $damagemultiplier * 1.15;
 
     $damagemultiplier = $darkness + $shadowForm - 1;
-    $spellpower = 600;
+    $spellpower = 1268;
 
-    $critchance = 10;
+    $critchance = 13.87;
     $criticalstrikeswd = "false";
     $criticalstrikemb = "false";
 
@@ -125,8 +125,8 @@
     -Second 30($dmgphasetwentyfive) (1.1SV + 0.05M * (1.1SV + 0.05M * SWP ticks) (VT has 1.5 seconds left, SWP has 21 seconds left)) 
     */
 
-    
-    echo "<div class=row><div class=col-6><h4 class=mb-1>&nbsp;&nbsp;&nbsp;&nbsp;Combat Log:</h4><br><ol>";
+    echo "";
+    echo "<div class=row><div class='col-xl-6 col-lg-6 col-md-12 ml-md-5 ml-lg-0'><h4 class=mb-1>&nbsp;&nbsp;Combat Log:</h4><br>";
 
     // $dmgphaseone
     // (1.04SV + 0.05M * (MB can crit)) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
@@ -156,9 +156,9 @@
 
     $dmgphaseone = $dmgphaseonemb + $dmgphaseoneswp + $dmgphaseonevt;
 
-    echo "<li class=mb>&nbsp;&nbsp;Mind Blast hits for " . $dmgphaseonemb . $dmgphaseonecrit;
-    echo "<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for " . $dmgphaseoneswp . " damage.</li>";
-    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphaseonevt . " damage.</li>";
+    echo "<ol><li class=mb>&nbsp;&nbsp;<span class=font-weight-bold>Mind Blast</span> hits for " . $dmgphaseonemb . $dmgphaseonecrit;
+    echo "<li class=swp>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Pain</span> ticks for " . $dmgphaseoneswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;<span class=font-weight-bold>Vampiric Touch</span> ticks for " . $dmgphaseonevt . " damage.</li>";
 
     // $dmgphasetwo
     // (1.08SV + 0.05M * (MF Tick))
@@ -166,7 +166,7 @@
     $dmgphasetwo = (($svfour + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphasetwo = round($dmgphasetwo);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasetwo . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphasetwo . " damage.</li>";
 
     // $dmgphasethree
     // (1.08SV + 0.05M * (MF Tick))
@@ -174,7 +174,7 @@
     $dmgphasethree = (($svfour + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphasethree = round($dmgphasethree);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasethree . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphasethree . " damage.</li>";
 
     // $dmgphasefour
     // (1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks)
@@ -187,8 +187,8 @@
 
     $dmgphasefour = $dmgphasefourswp + $dmgphasefourvt;
 
-    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphasefourswp . " damage.</li>";
-    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphasefourvt . " damage.</li>";
+    echo '<li class=swp>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Pain</span> ticks for ' . $dmgphasefourswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;<span class=font-weight-bold>Vampiric Touch</span> ticks for " . $dmgphasefourvt . " damage.</li>";
 
     // $dmgphasefive
     // (1.08SV + 0.05M * MF Tick)
@@ -196,7 +196,7 @@
     $dmgphasefive = (($svfour + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphasefive = round($dmgphasefive);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasefive . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphasefive . " damage.</li>";
 
     // $dmgphasesix
     // (1.08SV + 0.05M * (SWD can crit)
@@ -218,7 +218,7 @@
         $dmgphasesixcrit = " damage.</li>";
     }
 
-    echo "<li class=swd>&nbsp;&nbsp;Shadow Word Death hits for " . $dmgphasesix . $dmgphasesixcrit;
+    echo "<li class=swd>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Death</span> hits for " . $dmgphasesix . $dmgphasesixcrit;
 
     // $dmgphaseseven
     // (1.1SV + 0.05M) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
@@ -231,8 +231,8 @@
 
     $dmgphaseseven = $dmgphasesevenswp + $dmgphasesevenvt;
 
-    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphasesevenswp . " damage.</li>";
-    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphasesevenvt . " damage.</li>";
+    echo '<li class=swp>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Pain</span> ticks for ' . $dmgphasesevenswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;<span class=font-weight-bold>Vampiric Touch</span> ticks for " . $dmgphasesevenvt . " damage.</li>";
 
     // $dmgphaseeight
     // (1.1SV + 0.05M * MF tick)
@@ -240,7 +240,7 @@
     $dmgphaseeight = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphaseeight = round($dmgphaseeight);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphaseeight . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphaseeight . " damage.</li>";
 
     // $dmgphasenine
     // (1.1SV + 0.05M * MF tick)
@@ -248,7 +248,7 @@
     $dmgphasenine = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphasenine = round($dmgphasenine);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasenine . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphasenine . " damage.</li>";
 
     // $dmgphaseten
     // (1.1SV + 0.05M * MF tick)
@@ -256,7 +256,7 @@
     $dmgphaseten = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphaseten = round($dmgphaseten);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphaseten . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphaseten . " damage.</li>";
 
     // $dmgphaseeleven
     // (1.1SV + 0.05M) ((1.02SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
@@ -269,8 +269,8 @@
 
     $dmgphaseeleven = $dmgphaseelevenswp + $dmgphaseelevenvt;
 
-    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphaseelevenswp . " damage.</li>";
-    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphaseelevenvt . " damage.</li>";
+    echo '<li class=swp>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Pain</span> ticks for ' . $dmgphaseelevenswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;<span class=font-weight-bold>Vampiric Touch</span> ticks for " . $dmgphaseelevenvt . " damage.</li>";
 
     // $dmgphasetwelve
     // (1.1SV + 0.05M * MB damage roll - can crit)
@@ -292,7 +292,7 @@
         $dmgphasetwelvecrit = " damage.</li>";
     }
 
-    echo "<li class=mb>&nbsp;&nbsp;Mind Blast hits for " . $dmgphasetwelve . $dmgphasetwelvecrit;
+    echo "<li class=mb>&nbsp;&nbsp;<span class=font-weight-bold>Mind Blast</span> hits for " . $dmgphasetwelve . $dmgphasetwelvecrit;
 
 
     // $dmgphasethirteen
@@ -306,8 +306,8 @@
 
     $dmgphasethirteen = $dmgphasethirteenswp + $dmgphasethirteenvt;
 
-    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphasethirteenswp . " damage.</li>";
-    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphasethirteenvt . " damage.</li>";
+    echo '<li class=swp>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Pain</span> ticks for ' . $dmgphasethirteenswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;<span class=font-weight-bold>Vampiric Touch</span> ticks for " . $dmgphasethirteenvt . " damage.</li>";
 
     // $dmgphasefourteen
     // (1.1SV + 0.05M * MF tick)
@@ -315,7 +315,7 @@
     $dmgphasefourteen = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphasefourteen = round($dmgphasefourteen);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasefourteen . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphasefourteen . " damage.</li>";
 
     // $dmgphasefifteen
     // (1.1SV + 0.05M) (1.1SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks)
@@ -328,8 +328,8 @@
 
     $dmgphasefifteen = $dmgphasefifteenswp + $dmgphasefifteenvt;
 
-    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphasefifteenswp . " damage.</li>";
-    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphasefifteenvt . " damage.</li>";
+    echo '<li class=swp>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Pain</span> ticks for ' . $dmgphasefifteenswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;<span class=font-weight-bold>Vampiric Touch</span> ticks for " . $dmgphasefifteenvt . " damage.</li>";
 
     // $dmgphasesixteen
     // (1.1SV + 0.05M * MF tick)
@@ -337,7 +337,7 @@
     $dmgphasesixteen = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphasesixteen = round($dmgphasesixteen);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasesixteen . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphasesixteen . " damage.</li>";
 
     // $dmgphaseseventeen
     // (1.1SV + 0.05M * MF tick)
@@ -345,7 +345,7 @@
     $dmgphaseseventeen = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphaseseventeen = round($dmgphaseseventeen);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphaseseventeen . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphaseseventeen . " damage.</li>";
 
     // $dmgphaseeighteen
     // (1.1SV + 0.05M * (MF tick, (1.1SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
@@ -361,9 +361,9 @@
 
     $dmgphaseeighteen = $dmgphaseeighteenmf + $dmgphaseeighteenswp + $dmgphaseeighteenvt;
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphaseeighteenmf . " damage.</li>";
-    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphaseeighteenswp . " damage.</li>";
-    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphaseeighteenvt . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphaseeighteenmf . " damage.</li>";
+    echo '<li class=swp>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Pain</span> ticks for ' . $dmgphaseeighteenswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;<span class=font-weight-bold>Vampiric Touch</span> ticks for " . $dmgphaseeighteenvt . " damage.</li>";
 
     // $dmgphasenineteen
     // (1.1SV + 0.05M * MF tick)
@@ -371,7 +371,7 @@
     $dmgphasenineteen = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphasenineteen = round($dmgphasenineteen);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasenineteen . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphasenineteen . " damage.</li>";
 
     // $dmgphasetwenty
     // (1.1SV + 0.05M * MF tick)
@@ -379,7 +379,7 @@
     $dmgphasetwenty = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphasetwenty = round($dmgphasetwenty);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasetwenty . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphasetwenty . " damage.</li>";
 
     // $dmgphasetwentyone
     // (1.1SV + 0.05M * ((1.1SV + 0.05M * VT ticks), (1.04SV + 0.05M * SWP ticks))
@@ -392,8 +392,8 @@
 
     $dmgphasetwentyone = $dmgphasetwentyoneswp + $dmgphasetwentyonevt;
 
-    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphasetwentyoneswp . " damage.</li>";
-    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphasetwentyonevt . " damage.</li>";
+    echo '<li class=swp>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Pain</span> ticks for ' . $dmgphasetwentyoneswp . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;<span class=font-weight-bold>Vampiric Touch</span> ticks for " . $dmgphasetwentyonevt . " damage.</li>";
 
     // $dmgphasetwentytwo
     // (1.1SV + 0.05M * MB damage roll - can crit)
@@ -415,7 +415,7 @@
         $dmgphasetwentytwocrit = " damage.</li>";
     }
 
-    echo "<li class=mb>&nbsp;&nbsp;Mind Blast hits for " . $dmgphasetwentytwo . $dmgphasetwentytwocrit;
+    echo "<li class=mb>&nbsp;&nbsp;<span class=font-weight-bold>Mind Blast</span> hits for " . $dmgphasetwentytwo . $dmgphasetwentytwocrit;
 
     // $dmgphasetwentythree
     // (1.1SV + 0.05M * (1.1SV + 0.05M * VT ticks))
@@ -423,7 +423,7 @@
     $dmgphasetwentythree = (($svfive + $misery) * ($vttick)) * ($damagemultiplier);
     $dmgphasetwentythree = round($dmgphasetwentythree);
 
-    echo "<li class=vt>&nbsp;&nbsp;Vampiric Touch ticks for " . $dmgphasetwentythree . " damage.</li>";
+    echo "<li class=vt>&nbsp;&nbsp;<span class=font-weight-bold>Vampiric Touch</span> ticks for " . $dmgphasetwentythree . " damage.</li>";
 
     // $dmgphasetwentyfour
     // (1.1SV + 0.05M * MF tick)
@@ -431,7 +431,7 @@
     $dmgphasetwentyfour = (($svfive + $misery) * ($mftick)) * ($damagemultiplier);
     $dmgphasetwentyfour = round($dmgphasetwentyfour);
 
-    echo "<li class=mf>&nbsp;&nbsp;Mind Flay ticks for " . $dmgphasetwentyfour . " damage.</li>";
+    echo "<li class=mf>&nbsp;&nbsp;<span class=font-weight-bold>Mind Flay</span> ticks for " . $dmgphasetwentyfour . " damage.</li>";
 
     // $dmgphasetwentyfive
     // (1.1SV + 0.05M * (1.1SV + 0.05M * SWP ticks)
@@ -439,7 +439,7 @@
     $dmgphasetwentyfive = (($svtwo + $misery) * ($swptick)) * ($damagemultiplier);
     $dmgphasetwentyfive = round($dmgphasetwentyfive);
     
-    echo '<li class=swp>&nbsp;&nbsp;Shadow Word Pain ticks for ' . $dmgphasetwentyfive . " damage.</li></ul></div>";
+    echo '<li class=swp>&nbsp;&nbsp;<span class=font-weight-bold>Shadow Word Pain</span> ticks for ' . $dmgphasetwentyfive . " damage.</li></ul></div>";
 
 
     $totaldamage = $dmgphaseone + $dmgphasetwo + $dmgphasethree + $dmgphasefour + $dmgphasefive +
@@ -484,17 +484,14 @@
     $swddamagepercent = $swddamagepercent * 100;
     $swddamagepercent = round($swddamagepercent);
 
-    echo "<div class=col-5><h4>&nbsp;&nbsp;&nbsp;&nbsp;Damage:</h4><br>";
-    echo "<ul><li>Spell Power: " . $spellpower . "</li>";
-    echo "<li>Crit Chance: " . $critchance . "%</li>";
-    echo "<li>Total Damage: " . $totaldamage . " damage</li>";
-    echo "<li>Total Damage(Mind Blast): " . $mbdamagetotal . " damage (" . $mbdamagepercent . "%)</li>";
-    echo "<li>Total Damage(Mind Flay): " . $mfdamagetotal . " damage (" . $mfdamagepercent . "%)</li>";
-    echo "<li>Total Damage(Shadow Word Death): " . $swddamagetotal . " damage (" . $swddamagepercent . "%)</li>";
-    echo "<li>Total Damage(Shadow Word Pain): " . $swpdamagetotal . " damage (" . $swpdamagepercent . "%)</li>";
-    echo "<li>Damage per Second: " . $dps . " per/sec</li></ul></div></div>";
+    echo "<div class='col-xl-6 col-lg-6 col-md-6 mt-2 ml-md-5 ml-lg-0'><h4 class=mb-3>Damage:</h4>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Spell Power: </div>" . "<div class=col-6>" . $spellpower . "</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Crit Chance: </div>" . "<div class=col-6>" . $critchance . "%</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Total Damage: </div>" . "<div class=col-6>" . $totaldamage . " damage</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Total - Mind Blast: </div>" . "<div class=col-6>" . $mbdamagetotal . " damage (" . $mbdamagepercent . "%)</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Total - Mind Flay: </div>" . "<div class=col-6>" . $mfdamagetotal . " damage (" . $mfdamagepercent . "%)</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Total - Shadow Word Death: </div>" . "<div class=col-6>" . $swddamagetotal . " damage (" . $swddamagepercent . "%)</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Total - Shadow Word Pain: </div>" . "<div class=col-6>" . $swpdamagetotal . " damage (" . $swpdamagepercent . "%)</div></div>";
+    echo "<div class=row><div class='col-6 font-weight-bold'>Damage per Second: </div>" . "<div class=col-6>" . $dps . " per/sec</div></div></div></div>";
 
-
-
-
-    //</ul></div></div>
+    //</div></div></div>

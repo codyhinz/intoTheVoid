@@ -33,7 +33,7 @@
             <div class="heading navigation col-2" id="<?php if ($page == "home"){ echo "active";}?>"><a href="index.php" class="stretched-link">Home</a></div>
             <div class="heading navigation col-2" id="<?php if ($page == "pveguide"){ echo "active";}?>"><a href="pveguide.php" class="stretched-link">PVE Guides</a></div>
             <div class="heading navigation col-2" id="<?php if ($page == "bislist"){ echo "active";}?>"><a href="#" class="stretched-link">Best in Slot List</a></div>
-            <div class="heading navigation col-2" id="<?php if ($page == "dpscalulator"){ echo "active";}?>"><a href="#" class="stretched-link">DPS Calculator</a></div>
+            <div class="heading navigation col-2" id="<?php if ($page == "dpscalculator"){ echo "active";}?>"><a href="dpscalc.php" class="stretched-link">DPS Calculator</a></div>
             <div class="col-1"></div>
             <div class="heading col-2 align-items-end">
                 <div class="container">
@@ -66,6 +66,6 @@
             <a href="index.php"><div class="row justify-content-center topnav" id="<?php if ($page == "home"){ echo "active";}?>">Home</div></a>
             <a href="pveguide.php"><div class="row justify-content-center midnav" id="<?php if ($page == "pveguide"){ echo "active";}?>">PVE Guides</div></a>
             <a href="#"><div class="row justify-content-center midnav" id="<?php if ($page == "bislist"){ echo "active";}?>">Best In Slot List</div></a>
-            <a href="#"><div class="row justify-content-center bottomnav" id="<?php if ($page == "dpscalulator"){ echo "active";}?>">DPS Calculator</div></a>
+            <a href="dpscalc.php"><div class="row justify-content-center bottomnav" id="<?php if ($page == "dpscalculator"){ echo "active";}?>">DPS Calculator</div></a>
         </div>
     </div>
