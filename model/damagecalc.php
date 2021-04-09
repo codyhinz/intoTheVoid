@@ -518,7 +518,7 @@
     $vtdamagepercent = $vtdamagepercent * 100;
     $vtdamagepercent = round($vtdamagepercent);
 
-    echo "<div class='col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mt-2 ml-lg-0 mr-lg-0 ml-5 mr-5 ml-lg-0'><h4 class=mb-3>Damage:</h4>";
+    echo "<div class='col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mt-2 ml-lg-0 mr-lg-0 ml-2 mr-0 ml-lg-0'><h4 class=mb-3>Damage:</h4>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Spell Power: </div>" . "<div class=col-6>" . $spellpower . "</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Crit Chance: </div>" . "<div class=col-6>" . $critchance . "%</div></div>";
     echo "<div class=row><div class='col-6 font-weight-bold'>Total Damage: </div>" . "<div class=col-6>" . $totaldamage . " damage</div></div>";
